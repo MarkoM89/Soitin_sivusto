@@ -1,0 +1,40 @@
+.syna{
+
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    max-width: 35%;
+    display: inline-block;
+
+}
+
+.syna:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.syna.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+.syna img {
+
+    max-width: 85%;
+
+}
+
+.syna p {
+
+    color: rgb(41, 40, 40);
+}
+
+.syna ul {
+    color: rgb(41, 40, 40);
+}
+
+
+.synat{
+    min-height: 20em;
+}
