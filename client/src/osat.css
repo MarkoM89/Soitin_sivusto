@@ -19,6 +19,16 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+
+#hakuSuodatin{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .valittuSoitin{
     border: 1px solid black;
     border-radius: 5px;

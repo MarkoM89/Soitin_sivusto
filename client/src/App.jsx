@@ -4,6 +4,8 @@ import './osat.css'
 import Kortti from './Kortti.jsx'
 import Ylatunniste from './Ylatunniste.jsx'
 import Alatunniste from "./Alatunniste.jsx"
+import Haku from './Haku.jsx'
+import Suodattimet from './Suodattimet.jsx'
 import ValittuSoitin from './ValittuSoitin.jsx'
 
 function App() {
@@ -60,6 +62,11 @@ function App() {
 <div id='paaOsuus'>
 
   <Ylatunniste></Ylatunniste>
+
+  <div id='hakuSuodatin'>
+  <Haku></Haku>
+  <Suodattimet></Suodattimet>
+  </div>
 
 
     <div className='synat'>
