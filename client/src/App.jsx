@@ -1,15 +1,29 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import './osat.css'
-import Kortti from './Kortti'
-import Ylatunniste from './Ylatunniste'
-import Alatunniste from "./Alatunniste";
+import Kortti from './Kortti.jsx'
+import Ylatunniste from './Ylatunniste.jsx'
+import Alatunniste from "./Alatunniste.jsx"
+import ValittuSoitin from './ValittuSoitin.jsx'
 
 function App() {
 
-  const [Data, setData] = useState(null);
-  const [Datasyna, setDatasyna] = useState(null);
+  const [Data, setData] = useState();
+  const [Datasyna, setDatasyna] = useState();
+  const [DataValittu, setDataValittu] = useState();
 
+
+
+  const valittu = (valitunData, valitunData2, valitunData3, valitunData4) => {
+    console.log(valitunData, valitunData2, valitunData3)
+    setDataValittu([valitunData, valitunData2, valitunData3, valitunData4])
+    document.getElementById('paaOsuus').style.filter = 'blur(5px)'
+  } 
+
+  const suljettu = () => {
+    setDataValittu()
+    document.getElementById('paaOsuus').style.filter = 'none'
+  }
 
 
    useEffect(() => {
@@ -30,9 +44,23 @@ function App() {
   return (
     <>
 
-<Ylatunniste></Ylatunniste>
 
-<div>
+<div id='uusiIkkuna'>
+
+      {DataValittu != null ?
+      <ValittuSoitin malli={DataValittu[0]} kuva={DataValittu[1]} vaihtoehto={DataValittu[2]} selite={DataValittu[3]} painettuRastia={suljettu} ></ValittuSoitin>
+
+      :
+        <></>
+      }
+
+</div>
+
+
+<div id='paaOsuus'>
+
+  <Ylatunniste></Ylatunniste>
+
 
     <div className='synat'>
 
@@ -41,7 +69,7 @@ function App() {
       {Object.keys(Data).map((valmistaja, i) => (
 
        <button id={valmistaja} key={i} onClick={() => setDatasyna(Data[valmistaja].map((syna, i) => (<Kortti key={i} kuva={syna["kuva"]} vaihtoehto={syna["vaihtoehto"]} malli={syna["malli"]} lahde={syna["aaniLahde"]} suodatin={syna["suodatin"]} 
-    selitteet={syna["selitteet"]}></Kortti> )))}>{valmistaja}</button>
+    selitteet={syna["selitteet"]} painettuSoitinta={valittu}></Kortti> )))}>{valmistaja}</button>
 
       ))}
     </div> 
@@ -52,10 +80,12 @@ function App() {
 
     </div>
 
+
+
    <Alatunniste></Alatunniste>
 
 </div>
-  
+
 
     </>
   )

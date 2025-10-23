@@ -3,9 +3,11 @@
 
 function Kortti(props) {
 
+    
+
     return (
 
-        <div className='syna'>
+        <div className='syna' onClick={() =>  props.painettuSoitinta(props.malli, props.kuva, props.vaihtoehto, props.selitteet)} >
             <img src={props.kuva} alt={props.vaihtoehto} />
             <h2>{props.malli}</h2>
             <ul>
@@ -16,6 +18,8 @@ function Kortti(props) {
             <hr></hr>
             
             <p>{props.selitteet}.</p>
+
+
 
         </div>
 

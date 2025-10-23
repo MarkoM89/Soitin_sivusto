@@ -13,14 +13,39 @@
 
 .syna:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+  cursor: pointer;
 }
 .syna.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.valittuSoitin{
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px grey;
+    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+
+}
+
+.valittuSoitin button {
+    background-color: rgb(218, 211, 211);
+    margin-top: 0.6em
+}
+
+.valittuSoitin img{
+    max-width: 75%;
+}
 
 .syna img {
-
     max-width: 85%;
 
 }

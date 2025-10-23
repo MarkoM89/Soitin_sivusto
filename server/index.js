@@ -12,7 +12,7 @@ app.get("/syna", (req, res) => {
                 {kuva:'./src/assets/Moog-Memorymoog.jpg', vaihtoehto:"Kuva Memorymoogista", malli:"Memorymoog", aaniLahde:3, suodatin:"24db Moog-alipäästösuodatin", selitteet:"Moogin moniääninen syna, jossa on kolme äänilähdettä, kun usein moniäänisissä on kaksi"}], 
 
               Roland:  [{kuva:'./src/assets/Roland-jupiter8.jpg', vaihtoehto:"Kuva Jupiter 8:sta", malli: "Jupiter 8", aaniLahde: 2, suodatin: "24db alipäästösuodatin sekä ylipäästösuodatin", selitteet:"Rolandin lippulaivamalli moniäänisynista, erittäin tunnettu ja luotettava" }, 
-                {kuva:'./src/assets/Roland-Jupiter-6.jpg', vaihtoehto:"Kuva Jupiter 6:sta", malli:"Jupiter 6", aaniLahde:2, suodatin:"24db alipäästösuodatin", selitteet:"Jupiter 8:in sisarus"}],
+                {kuva:'./src/assets/Roland-Jupiter-6.jpg', vaihtoehto:"Kuva Jupiter 6:sta", malli:"Jupiter 6", aaniLahde:2, suodatin:"24db alipäästösuodatin", selitteet:"Jupiter 8:n sisarus"}],
 
 
                 Oberheim:  [{kuva:'./src/assets/Oberheim-OB-X.jpg', vaihtoehto:"Kuva OBX:sta", malli: "OBX", aaniLahde: 2, suodatin: "24db alipäästösuodatin", selitteet:"Oberheimin ensimmäinen nykyaikaisempi moniääninen syna, aikaisempi 8-Voice malli vaati monta yksittäistä synaa viere vierekkäin" }, 

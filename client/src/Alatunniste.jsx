@@ -7,7 +7,7 @@ function Alatunniste() {
 
             <hr></hr>
 
-        <p>&copy; {new Date().getFullYear()} React-Nodejs-opettelu</p>
+        <p>&copy; {new Date().getFullYear()} Soitinsivusto</p>
 
         </footer>
     );
