@@ -15,9 +15,31 @@ function App() {
   const [DataValittu, setDataValittu] = useState();
 
 
-
+/*
   const valittu = (valitunData, valitunData2, valitunData3, valitunData4) => {
     console.log(valitunData, valitunData2, valitunData3)
+    setDataValittu([valitunData, valitunData2, valitunData3, valitunData4])
+    document.getElementById('paaOsuus').style.filter = 'blur(5px)'
+  } 
+    */
+
+    const valittu = (valitunData, valitunData2, valitunData3, valitunData4) => {
+    let valittuSyna = null
+    
+     Object.keys(Data).forEach(element => {
+
+        for (let i = 0; i < Data[element].length; i++) {
+          
+          if (Data[element][i].malli == valitunData){
+
+              valittuSyna = Data[element][i]
+              console.log(valittuSyna)
+          }
+        }
+
+      });
+
+
     setDataValittu([valitunData, valitunData2, valitunData3, valitunData4])
     document.getElementById('paaOsuus').style.filter = 'blur(5px)'
   } 
