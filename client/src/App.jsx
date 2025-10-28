@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import './osat.css'
-import Kortti from './Kortti.jsx'
+import Soittimet from './Soittimet.jsx'
 import Ylatunniste from './Ylatunniste.jsx'
 import Alatunniste from "./Alatunniste.jsx"
 import Haku from './Haku.jsx'
@@ -23,14 +23,16 @@ function App() {
   } 
     */
 
-    const valittu = (valitunData, valitunData2, valitunData3, valitunData4) => {
-    let valittuSyna = null
+    const valittu = (valitunSoittimenMalli) => {
+
+      console.log('koe '+valitunSoittimenMalli)
+      let valittuSyna = null
     
      Object.keys(Data).forEach(element => {
 
         for (let i = 0; i < Data[element].length; i++) {
           
-          if (Data[element][i].malli == valitunData){
+          if (Data[element][i].malli == valitunSoittimenMalli){
 
               valittuSyna = Data[element][i]
               console.log(valittuSyna)
@@ -40,7 +42,7 @@ function App() {
       });
 
 
-    setDataValittu([valitunData, valitunData2, valitunData3, valitunData4])
+    setDataValittu(valittuSyna)
     document.getElementById('paaOsuus').style.filter = 'blur(5px)'
   } 
 
@@ -72,8 +74,8 @@ function App() {
 <div id='uusiIkkuna'>
 
       {DataValittu != null ?
-      <ValittuSoitin malli={DataValittu[0]} kuva={DataValittu[1]} vaihtoehto={DataValittu[2]} selite={DataValittu[3]} painettuRastia={suljettu} ></ValittuSoitin>
-
+      <ValittuSoitin malli={DataValittu["malli"]} kuva={DataValittu["kuva"]} vaihtoehto={DataValittu["vaihtoehto"]} selite={DataValittu["selitteet"]} painettuRastia={suljettu} ></ValittuSoitin>
+        
       :
         <></>
       }
@@ -97,8 +99,8 @@ function App() {
       <div>
       {Object.keys(Data).map((valmistaja, i) => (
 
-       <button id={valmistaja} key={i} onClick={() => setDatasyna(Data[valmistaja].map((syna, i) => (<Kortti key={i} kuva={syna["kuva"]} vaihtoehto={syna["vaihtoehto"]} malli={syna["malli"]} lahde={syna["aaniLahde"]} suodatin={syna["suodatin"]} 
-    selitteet={syna["selitteet"]} painettuSoitinta={valittu}></Kortti> )))}>{valmistaja}</button>
+       <button id={valmistaja} key={i} onClick={() => setDatasyna(Data[valmistaja].map((syna, i) => (<Soittimet key={i} kuva={syna["kuva"]} vaihtoehto={syna["vaihtoehto"]} malli={syna["malli"]} lahde={syna["aaniLahde"]} suodatin={syna["suodatin"]} 
+    selitteet={syna["selitteet"]} painettuSoitinta={valittu}></Soittimet> )))}>{valmistaja}</button>
 
       ))}
     </div> 

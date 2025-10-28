@@ -1,13 +1,13 @@
 
 
 
-function Kortti(props) {
+function Soittimet(props) {
 
     
 
     return (
 
-        <div className='syna' onClick={() =>  props.painettuSoitinta(props.malli, props.kuva, props.vaihtoehto, props.selitteet)} >
+        <div className='syna' onClick={() =>  props.painettuSoitinta(props.malli)} >
             <img src={props.kuva} alt={props.vaihtoehto} />
             <h2>{props.malli}</h2>
             <ul>
@@ -28,4 +28,4 @@ function Kortti(props) {
 }
 
 
-export default Kortti
+export default Soittimet
