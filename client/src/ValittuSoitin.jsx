@@ -10,15 +10,25 @@ function ValittuSoitin(props){
 
             <img src={props.kuva} alt={props.vaihtoehto} />
 
-            <h2>Valittuna {props.malli}</h2>
+            <h2>{props.malli}</h2>
+
+
+            <div className="soittimenTiedot">
+            
+            <ul>
+                <li>Signaalin tyyppi: {props.signaali}</li>
+                <li>Yhtäaikaisten äänien määrä: {props.äänienMäärä}</li>
+                <li>Värähdepiirien määrä: {props.lahde}</li>
+                <li>Suodatin tyyppi: {props.suodatin}</li>
+            </ul>
+            
 
             <p>{props.selite}</p>
 
+            </div>
+
             {/*kuva, 
-            malli,
-            analooginen vai digitaalinen vai molempia,
             värähdepiirien määrä ja tyyppi sekä aaltomuodot
-            suodattimet
             modulaatiot (muokkaimet) lukumäärä ja minkä tyyppisiä
             tehosteet
             rakenne, koko, kotelo, käyttöliittymä

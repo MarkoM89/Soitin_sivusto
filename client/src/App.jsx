@@ -74,7 +74,8 @@ function App() {
 <div id='uusiIkkuna'>
 
       {DataValittu != null ?
-      <ValittuSoitin malli={DataValittu["malli"]} kuva={DataValittu["kuva"]} vaihtoehto={DataValittu["vaihtoehto"]} selite={DataValittu["selitteet"]} painettuRastia={suljettu} ></ValittuSoitin>
+      <ValittuSoitin malli={DataValittu["malli"]} kuva={DataValittu["kuva"]} vaihtoehto={DataValittu["vaihtoehto"]} signaali={DataValittu["signaali"]} äänienMäärä={DataValittu["äänienMäärä"]} lahde={DataValittu["aaniLahde"]} suodatin={DataValittu["suodatin"]}
+       selite={DataValittu["selitteet"]} painettuRastia={suljettu} ></ValittuSoitin>
         
       :
         <></>

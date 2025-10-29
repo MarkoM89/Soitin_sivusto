@@ -6,9 +6,9 @@ function Haku(){
     <>
         <form >
 
-            <label>Hakukenttä
+            <label>Haku:
         
-                <input type="text" />
+                <input type="text" placeholder="Hakukenttä" />
 
             </label>
 

@@ -46,6 +46,7 @@
 
 }
 
+
 .valittuSoitin button {
     background-color: rgb(218, 211, 211);
     margin-top: 0.6em
@@ -72,4 +73,16 @@
 
 .synat{
     min-height: 20em;
+}
+
+
+.soittimenTiedot{
+    border-top: 1px solid black;;
+    display: flex;
+    flex-direction: row;
+        justify-content: center;
+}
+
+.soittimenTiedot p{
+    width: 50%;
 }
