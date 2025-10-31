@@ -1,4 +1,4 @@
-function Haku(){
+function Haku(props){
 
 
     return (
@@ -8,7 +8,7 @@ function Haku(){
 
             <label>Haku:
         
-                <input type="text" placeholder="Hakukenttä" />
+                <input type="text" placeholder="Hakukenttä" onChange={() => props.hakuKaynnissa()}/>
 
             </label>
 

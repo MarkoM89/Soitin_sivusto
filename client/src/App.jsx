@@ -13,17 +13,11 @@ function App() {
   const [Data, setData] = useState();
   const [Datasyna, setDatasyna] = useState();
   const [DataValittu, setDataValittu] = useState();
+  const [DataSuodatettu, setDataSuodatettu] = useState(false);
 
 
-/*
-  const valittu = (valitunData, valitunData2, valitunData3, valitunData4) => {
-    console.log(valitunData, valitunData2, valitunData3)
-    setDataValittu([valitunData, valitunData2, valitunData3, valitunData4])
-    document.getElementById('paaOsuus').style.filter = 'blur(5px)'
-  } 
-    */
 
-    const valittu = (valitunSoittimenMalli) => {
+  const valittu = (valitunSoittimenMalli) => {
 
       console.log('koe '+valitunSoittimenMalli)
       let valittuSyna = null
@@ -42,9 +36,10 @@ function App() {
       });
 
 
-    setDataValittu(valittuSyna)
-    document.getElementById('paaOsuus').style.filter = 'blur(5px)'
+      setDataValittu(valittuSyna)
+        document.getElementById('paaOsuus').style.filter = 'blur(5px)'
   } 
+
 
   const suljettu = () => {
     setDataValittu()
@@ -52,7 +47,17 @@ function App() {
   }
 
 
-   useEffect(() => {
+  const dataHaku = () => {
+
+    setDataSuodatettu(!DataSuodatettu)
+
+    console.log(DataSuodatettu)
+
+
+  }
+
+
+  useEffect(() => {
     fetch("http://localhost:5000/syna").then(
       Response => Response.json()
     ).then(
@@ -89,12 +94,12 @@ function App() {
   <Ylatunniste></Ylatunniste>
 
   <div id='hakuSuodatin'>
-  <Haku></Haku>
+  <Haku hakuKaynnissa={dataHaku}></Haku>
   <Suodattimet></Suodattimet>
   </div>
 
 
-    <div className='synat'>
+    <div className='synat' onClick={dataHaku}>
 
        {Data != null ?  
       <div>
@@ -103,7 +108,11 @@ function App() {
        <button id={valmistaja} key={i} onClick={() => setDatasyna(Data[valmistaja].map((syna, i) => (<Soittimet key={i} kuva={syna["kuva"]} vaihtoehto={syna["vaihtoehto"]} malli={syna["malli"]} lahde={syna["aaniLahde"]} suodatin={syna["suodatin"]} 
     selitteet={syna["selitteet"]} painettuSoitinta={valittu}></Soittimet> )))}>{valmistaja}</button>
 
-      ))}
+      ))
+      
+      
+      //Suodattimien vaikutukset / lähdekoodi??
+      }
     </div> 
     :  <p>..........</p>}
 
